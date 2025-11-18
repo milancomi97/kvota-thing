@@ -36,15 +36,4 @@ Route::get('/dashboard', [DashboardController::class, 'index'])
 
 
 
-Route::middleware(['auth']) // ili samo 'auth'
-->prefix('analytics')
-    ->name('analytics.')
-    ->group(function () {
-        Route::get('/', [GoogleController::class, 'dashboard'])->name('dashboard');
-        Route::get('/daily-users', [GoogleController::class, 'dailyUsers'])->name('daily-users');
-        Route::get('/top-pages', [GoogleController::class, 'topPages'])->name('top-pages');
-        Route::get('/analytics/ping', [GoogleController::class, 'ping'])
-            ->name('ping');
-        Route::get('/realtime', [\App\Http\Controllers\GoogleController::class, 'realtime'])->name('realtime');
 
-    });

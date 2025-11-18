@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{{ $event->naziv ?? config('app.name', 'CodeGalerija') }}</title>
+    <title>{{ $event->naziv ?? config('app.name', 'KvotaThing') }}</title>
 
     <!-- Animate.css -->
     <link rel="stylesheet"
@@ -102,9 +102,6 @@
 <header class="logo-header py-3">
     <div class="container text-center">
         <a href="{{ url('/') }}">
-            <img src="{{ asset('images/logo.png') }}"
-                 alt="CodeGalerija Logo"
-                 style="max-height:100px;">
         </a>
     </div>
 </header>

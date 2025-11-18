@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="content-header">
-        <h1>Dobrodošli na QR Galeriju!</h1>
+        <h1>Dobrodošli na dashboard</h1>
     </div>
 
     <div class="content">

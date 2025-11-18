@@ -1,10 +1,33 @@
-@include('layouts.partials.head')
-@include('layouts.partials.navbar')
-@include('layouts.partials.sidebar')
+<!DOCTYPE html>
+<html lang="sr">
 
-<div class="content-wrapper">
-    @yield('content')
+<head>
+    @include('layouts.partials.head')
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed">
+<div class="wrapper">
+
+    {{-- NAVBAR --}}
+    @include('layouts.partials.navbar')
+
+    {{-- SIDEBAR --}}
+    @include('layouts.partials.sidebar')
+
+    {{-- MAIN CONTENT --}}
+    <div class="content-wrapper">
+        <section class="content pt-3">
+            @yield('content')
+        </section>
+    </div>
+
+    {{-- FOOTER --}}
+    @include('layouts.partials.footer')
+
 </div>
 
-@include('layouts.partials.footer')
+{{-- SCRIPTS --}}
 @include('layouts.partials.scripts')
+
+</body>
+</html>
