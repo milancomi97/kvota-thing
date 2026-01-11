@@ -32,9 +32,38 @@ Route::domain('{site}.codegalerija.rs')->middleware(['web'])->group(function () 
 
 /*
 |--------------------------------------------------------------------------
-| FALLBACK (IP / nepoznat domen)
+| LOCAL – *.test (Laragon)
 |--------------------------------------------------------------------------
 */
+Route::domain('{site}.test')->middleware('web')->group(function () {
+
+    Route::get('/', [HomeController::class, 'index'])->name('home');
+
+    Auth::routes();
+
+    Route::get('/dashboard', [DashboardController::class, 'index'])
+        ->middleware('auth')
+        ->name('dashboard');
+});
+
+
+/*
+|--------------------------------------------------------------------------
+| LOCAL fallback – bez subdomena (kvota.test)
+|--------------------------------------------------------------------------
+*/
+Route::domain('kvota-thing.test')->middleware('web')->group(function () {
+
+    Route::get('/', [HomeController::class, 'index'])->name('home');
+
+    Auth::routes();
+
+    Route::get('/dashboard', [DashboardController::class, 'index'])
+        ->middleware('auth')
+        ->name('dashboard');
+});
+
+
 Route::fallback(function () {
     abort(404);
 });

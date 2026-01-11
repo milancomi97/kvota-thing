@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Middleware;
 
 use Closure;
@@ -10,15 +9,19 @@ class ResolveSite
 {
     public function handle(Request $request, Closure $next)
     {
-        $host = $request->getHost();       // milos.codegalerija.rs
-        $site = explode('.', $host)[0];    // milos
+        $host = $request->getHost(); // npr: milos.kvota.test | kvota.test | milos.codegalerija.rs
+        $parts = explode('.', $host);
 
-        // Dozvoli samo ova dva (za sada)
+        // Ako ima subdomen → uzmi ga, u suprotnom default = milos
+        $site = count($parts) > 2 ? $parts[0] : 'milos';
+
+        // Dozvoljeni sajtovi
         if (!in_array($site, ['milos', 'teretana'], true)) {
-            abort(404);
+            // fallback na milos (ili može abort(404) ako želiš strogo)
+            $site = 'milos';
         }
 
-        // Globalno dostupno u app('site')
+        // ⭐ KLJUČNO: globalni default za rute
         URL::defaults(['site' => $site]);
 
         return $next($request);

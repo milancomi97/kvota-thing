@@ -27,6 +27,7 @@ class HomeController extends Controller
             return redirect()->route('dashboard');
         }
 
-        return view(request()->route('site') . '.landing');
+        $site='kvota-thing' == request()->route('site')  ? 'milos' : request()->route('site');
+        return view($site. '.landing');
     }
 }
