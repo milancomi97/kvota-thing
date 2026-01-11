@@ -13,7 +13,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+//        $this->middleware('auth');
     }
 
     /**
@@ -23,8 +23,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $site = app('site'); // milos | teretana
+        if (auth()->check()) {
+            return redirect()->route('dashboard');
+        }
 
-        return view("$site.landing");
+        return view(request()->route('site') . '.landing');
     }
 }
