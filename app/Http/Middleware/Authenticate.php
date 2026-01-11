@@ -17,7 +17,7 @@ class Authenticate extends Middleware
         }
 
         // site dolazi iz ResolveSite middleware-a
-        $site = app('site');
+        $site = $request->route('site');
 
         return route('login', ['site' => $site]);
     }
