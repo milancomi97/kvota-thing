@@ -1,39 +1,40 @@
 <?php
 
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\EventController;
-use App\Http\Controllers\GoogleController;
-use App\Http\Controllers\PhotoController;
-use App\Http\Controllers\UserController;
-use SimpleSoftwareIO\QrCode\Facades\QrCode;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
 */
 
+/*
+|--------------------------------------------------------------------------
+| SUBDOMAIN ROUTES (milos / teretana)
+|--------------------------------------------------------------------------
+*/
+Route::domain('{site}.codegalerija.rs')->middleware(['web'])->group(function () {
+
+    // Landing / Home
+    Route::get('/', [HomeController::class, 'index'])->name('home');
+
+    // Auth (login, register...)
+    Auth::routes();
+
+    // Dashboard
+    Route::get('/dashboard', [DashboardController::class, 'index'])
+        ->middleware('auth')
+        ->name('dashboard');
+});
 
 
-Route::get('/', function() {
-    return view('landing');
-})->name('home');
-
-
-Auth::routes();
-
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/dashboard', [DashboardController::class, 'index'])
-    ->middleware(['auth'])
-    ->name('dashboard');
-
-
-
-
+/*
+|--------------------------------------------------------------------------
+| FALLBACK (IP / nepoznat domen)
+|--------------------------------------------------------------------------
+*/
+Route::fallback(function () {
+    abort(404);
+});
