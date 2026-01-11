@@ -12,13 +12,6 @@ class Authenticate extends Middleware
      */
     protected function redirectTo(Request $request): ?string
     {
-        if ($request->expectsJson()) {
-            return null;
-        }
-
-        // site dolazi iz ResolveSite middleware-a
-        $site = $request->route('site');
-
-        return route('login', ['site' => $site]);
+        return $request->expectsJson() ? null : route('login');
     }
 }

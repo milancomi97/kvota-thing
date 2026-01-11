@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\URL;
 
 class ResolveSite
 {
@@ -18,7 +19,7 @@ class ResolveSite
         }
 
         // Globalno dostupno u app('site')
-        app()->instance('site', $site);
+        URL::defaults(['site' => $site]);
 
         return $next($request);
     }
