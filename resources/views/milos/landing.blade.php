@@ -200,7 +200,7 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="milos/img/slika1.jpg" class="d-block w-100" alt="Slide 1">
+                <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1920&h=1080&fit=crop" class="d-block w-100" alt="Slide 1">
                 <div class="carousel-caption">
                     <h1 class="hero-title" data-sr="Profesionalne Električarske Usluge" data-en="Professional Electrical Services" data-de="Professionelle Elektrodienstleistungen">Profesionalne Električarske Usluge</h1>
                     <p class="hero-subtitle" data-sr="Kvalitet, Sigurnost i Pouzdanost" data-en="Quality, Safety and Reliability" data-de="Qualität, Sicherheit und Zuverlässigkeit">Kvalitet, Sigurnost i Pouzdanost</p>
@@ -210,7 +210,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="milos/img/slika2.jpg" class="d-block w-100" alt="Slide 2">
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=1080&fit=crop" class="d-block w-100" alt="Slide 2">
                 <div class="carousel-caption">
                     <h1 class="hero-title" data-sr="Profesionalne Električarske Usluge" data-en="Professional Electrical Services" data-de="Professionelle Elektrodienstleistungen">Profesionalne Električarske Usluge</h1>
                     <p class="hero-subtitle" data-sr="Kvalitet, Sigurnost i Pouzdanost" data-en="Quality, Safety and Reliability" data-de="Qualität, Sicherheit und Zuverlässigkeit">Kvalitet, Sigurnost i Pouzdanost</p>
@@ -220,7 +220,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="milos/img/slika3.jpg" class="d-block w-100" alt="Slide 3">
+                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1920&h=1080&fit=crop" class="d-block w-100" alt="Slide 3">
                 <div class="carousel-caption">
                     <h1 class="hero-title" data-sr="Profesionalne Električarske Usluge" data-en="Professional Electrical Services" data-de="Professionelle Elektrodienstleistungen">Profesionalne Električarske Usluge</h1>
                     <p class="hero-subtitle" data-sr="Kvalitet, Sigurnost i Pouzdanost" data-en="Quality, Safety and Reliability" data-de="Qualität, Sicherheit und Zuverlässigkeit">Kvalitet, Sigurnost i Pouzdanost</p>
